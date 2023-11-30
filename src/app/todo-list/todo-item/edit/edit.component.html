@@ -2,7 +2,7 @@
   <form #form="ngForm" (ngSubmit)="editToDo(form.value.name, index)">
     <h3>Edit To-Do: {{ item }}</h3>
     <label>Enter a new name for To-Do</label>
-    <input type="text" class="form-control" name="name" ngModel />
-    <button type="submit">Submit</button>
+    <input type="text" class="form-control" name="name" required ngModel />
+    <button [disabled]="form.invalid" type="submit">Submit</button>
   </form>
 </div>

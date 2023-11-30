@@ -35,6 +35,5 @@ export class TodoItemComponent {
   turnOnEditMode() {
     this.dataService.setIsEditing(true, this.index);
     this.dataService.setGlobalEditing(true);
-    console.log(this.index);
   }
 }
