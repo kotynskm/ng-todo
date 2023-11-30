@@ -1,0 +1,9 @@
+<div>
+  <h3>{{ toDo?.name }}</h3>
+  <button [disabled]="isEditing$" (click)="turnOnEditMode()">Edit</button>
+  <button (click)="deleteToDo(index)">Delete</button>
+  <input type="checkbox" />
+  <div *ngIf="toDo?.isEditing">
+    <app-edit [index]="index" [item]="toDo?.name"></app-edit>
+  </div>
+</div>
