@@ -19,8 +19,9 @@ export class DataService {
     return this.toDoItems;
   }
 
-  addToDo(value: string, isEditing = false) {
-    const newTodo = { name: value, isEditing };
+  addToDo(value: string, isEditing = false, isCompleted = false) {
+    const index = this.toDoItems.length;
+    const newTodo = { index: index, name: value, isEditing, isCompleted };
     this.toDoItems.push(newTodo);
   }
 
