@@ -6,6 +6,8 @@ This app is a To-Do list where To-Do's can be added, completed, edited, and dele
 
 Styles created with ionic: https://ionicframework.com/docs/
 
+Deployed site active at: https://kk-ng-todo.netlify.app/
+
 # Images
 
 ### Web Browser View
