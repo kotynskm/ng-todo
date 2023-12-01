@@ -30,7 +30,12 @@ export class DataService {
   }
 
   editToDo(value: string, index: number) {
-    this.toDoItems[index] = { name: value, isEditing: false };
+    this.toDoItems[index] = {
+      index: index,
+      name: value,
+      isEditing: false,
+      isCompleted: false,
+    };
     this.setGlobalEditing(false);
   }
 
