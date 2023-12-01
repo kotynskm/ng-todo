@@ -29,8 +29,9 @@ export class DataService {
     if (item.isCompleted === false) {
       this.completedItems.push(item);
     } else {
+      const itemToFind = this.toDoItems[index];
       const itemIndex = this.completedItems.findIndex(
-        (item) => item.index === index
+        (item) => item.name === itemToFind.name
       );
 
       if (itemIndex !== -1) {
