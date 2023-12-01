@@ -8,12 +8,17 @@ Styles created with ionic: https://ionicframework.com/docs/
 
 # Images
 
+### Web Browser View
+
 <img src="src/assets/Screenshot 2023-11-30 at 5.46.05 PM.png">
 
 <img src="src/assets/Screenshot 2023-11-30 at 5.46.44 PM.png">
 
 <img src="src/assets/Screenshot 2023-11-30 at 5.46.53 PM.png">
 
+### Mobile View
+
+<img src="src/assets/Screenshot 2023-11-30 at 6.02.49 PM.png">
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
