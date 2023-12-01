@@ -18,7 +18,9 @@ Styles created with ionic: https://ionicframework.com/docs/
 
 ### Mobile View
 
-<img src="src/assets/Screenshot 2023-11-30 at 6.02.49 PM.png">
+<img src="src/assets/Screenshot 2023-12-01 at 9.55.27 AM.png">
+
+<img src="src/assets/Screenshot 2023-12-01 at 9.55.11 AM.png">
 
 ## Development server
 
