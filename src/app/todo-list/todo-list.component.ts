@@ -36,7 +36,6 @@ export class TodoListComponent {
     if (item.isCompleted === false) {
       this.completedItems.push(item);
     } else {
-      // replace with the correct index
       const itemIndex = this.completedItems.findIndex(
         (item) => item.index === index
       );
@@ -46,9 +45,5 @@ export class TodoListComponent {
         this.completedItems.splice(itemIndex, 1);
       }
     }
-
-    console.log(item.isCompleted);
-    console.log(index);
-    console.log(this.completedItems);
   }
 }
