@@ -9,8 +9,8 @@ export class DataService {
   constructor() {}
 
   toDoItems: ToDo[] = [
-    { index: 0, name: 'Vacuum', isEditing: false },
-    { index: 1, name: 'Buy Groceries', isEditing: false },
+    { index: 0, name: 'Vacuum', isEditing: false, isCompleted: false },
+    { index: 1, name: 'Buy Groceries', isEditing: false, isCompleted: false },
   ];
 
   isEditing = new BehaviorSubject<boolean>(false);

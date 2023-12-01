@@ -1,14 +1,69 @@
-<h1>To-Do List</h1>
-<form #form="ngForm" (ngSubmit)="addToDo(form.value.name)">
-  <label>Enter Name of To-Do</label>
-  <input type="text" class="form-control" name="name" ngModel />
-  <button [disabled]="isEditing$" type="submit">Add</button>
-</form>
+<ion-content color="light">
+  <ion-grid [fixed]="true">
+    <h2 class="title-quote">
+      Once a task has begun, never leave it till it's done
+    </h2>
 
-<div>
-  <ul *ngFor="let item of listItems; let index = index">
-    <li>
-      <app-todo-item [toDo]="item" [index]="index"></app-todo-item>
-    </li>
-  </ul>
-</div>
+    <ion-row>
+      <ion-col size-sm="auto" size-md="4">
+        <h3>Add To-Do's:</h3>
+        <form #form="ngForm" (ngSubmit)="addToDo(form.value.name)">
+          <ion-input
+            label="Add a New To-Do"
+            label-placement="floating"
+            fill="outline"
+            name="name"
+            class="form-control"
+            ngModel
+            required
+          ></ion-input>
+          <ion-button
+            color="success"
+            [disabled]="isEditing$ || !form.valid"
+            type="submit"
+            id="open-toast"
+            expand="block"
+            >Add</ion-button
+          >
+        </form>
+
+        <ion-toast
+          trigger="open-toast"
+          message="New To-Do Successfully Added!"
+          [duration]="5000"
+        ></ion-toast>
+      </ion-col>
+      <ion-col>
+        <h3>Current To-Do's:</h3>
+        <ion-list
+          [inset]="true"
+          *ngFor="let item of listItems; let index = index"
+        >
+          <ion-item>
+            <app-todo-item [toDo]="item" [index]="index"></app-todo-item>
+
+            <ion-checkbox
+              [(ngModel)]="item.isCompleted"
+              (click)="toggleCompleted(item, index)"
+              slot="start"
+              aria-label="Toggle task completion"
+            ></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3 class="completed">Completed To-Do's:</h3>
+        <ion-list
+          [inset]="true"
+          *ngFor="let item of completedItems; let index = index"
+        >
+          <ion-item>
+            {{ item.name }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -15,4 +15,9 @@ export class EditComponent {
   editToDo(value: string, index: number) {
     this.dataService.editToDo(value, index);
   }
+
+  exitEditMode() {
+    this.dataService.setIsEditing(false, this.index);
+    this.dataService.setGlobalEditing(false);
+  }
 }

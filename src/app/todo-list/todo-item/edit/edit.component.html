@@ -1,8 +1,17 @@
 <div>
   <form #form="ngForm" (ngSubmit)="editToDo(form.value.name, index)">
-    <h3>Edit To-Do: {{ item }}</h3>
-    <label>Enter a new name for To-Do</label>
-    <input type="text" class="form-control" name="name" required ngModel />
-    <button [disabled]="form.invalid" type="submit">Submit</button>
+    <h6>Currently editing: {{ item }}</h6>
+    <ion-input
+      placeholder="Enter edits here"
+      type="text"
+      class="form-control"
+      name="name"
+      required
+      ngModel
+    />
+    <ion-button color="success" [disabled]="form.invalid" type="submit"
+      >Submit</ion-button
+    >
+    <ion-button color="warning" (click)="exitEditMode()">Cancel</ion-button>
   </form>
 </div>

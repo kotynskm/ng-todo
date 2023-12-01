@@ -9,6 +9,7 @@ import { ToDo } from '../todo.model';
   styleUrls: ['./todo-list.component.css'],
 })
 export class TodoListComponent {
+  completedItems: ToDo[] = [];
   listItems: ToDo[] = [];
   isEditing$?: boolean;
   @ViewChild('form') form?: NgForm;
@@ -29,5 +30,25 @@ export class TodoListComponent {
 
   deleteToDo(index: number) {
     this.dataService.deleteToDo(index);
+  }
+
+  toggleCompleted(item: ToDo, index: number) {
+    if (item.isCompleted === false) {
+      this.completedItems.push(item);
+    } else {
+      // replace with the correct index
+      const itemIndex = this.completedItems.findIndex(
+        (item) => item.index === index
+      );
+
+      if (itemIndex !== -1) {
+        // Remove the item with the matching index
+        this.completedItems.splice(itemIndex, 1);
+      }
+    }
+
+    console.log(item.isCompleted);
+    console.log(index);
+    console.log(this.completedItems);
   }
 }

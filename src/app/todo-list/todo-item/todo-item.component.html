@@ -1,8 +1,15 @@
 <div>
   <h3>{{ toDo?.name }}</h3>
-  <button [disabled]="isEditing$" (click)="turnOnEditMode()">Edit</button>
-  <button (click)="deleteToDo(index)">Delete</button>
-  <input type="checkbox" />
+  <ion-button
+    color="secondary"
+    [disabled]="isEditing$"
+    (click)="turnOnEditMode()"
+    >Edit</ion-button
+  >
+  <ion-button aria-label="delete" color="warning" (click)="deleteToDo(index)"
+    ><ion-icon name="trash-outline" aria-hidden="true"></ion-icon
+  ></ion-button>
+
   <div *ngIf="toDo?.isEditing">
     <app-edit [index]="index" [item]="toDo?.name"></app-edit>
   </div>
