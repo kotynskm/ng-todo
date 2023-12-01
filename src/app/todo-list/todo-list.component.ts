@@ -45,5 +45,9 @@ export class TodoListComponent {
         this.completedItems.splice(itemIndex, 1);
       }
     }
+
+    console.log(item.isCompleted);
+    console.log(index);
+    console.log(this.completedItems);
   }
 }
