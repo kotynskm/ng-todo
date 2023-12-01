@@ -2,11 +2,15 @@
   <h3>{{ toDo?.name }}</h3>
   <ion-button
     color="secondary"
-    [disabled]="isEditing$"
+    [disabled]="isEditing$ || toDo?.isCompleted"
     (click)="turnOnEditMode()"
     >Edit</ion-button
   >
-  <ion-button aria-label="delete" color="warning" (click)="deleteToDo(index)"
+  <ion-button
+    [disabled]="toDo?.isCompleted"
+    aria-label="delete"
+    color="warning"
+    (click)="deleteToDo(index)"
     ><ion-icon name="trash-outline" aria-hidden="true"></ion-icon
   ></ion-button>
 

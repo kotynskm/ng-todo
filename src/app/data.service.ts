@@ -13,10 +13,31 @@ export class DataService {
     { index: 1, name: 'Buy Groceries', isEditing: false, isCompleted: false },
   ];
 
+  completedItems: ToDo[] = [];
+
   isEditing = new BehaviorSubject<boolean>(false);
 
   getToDos() {
     return this.toDoItems;
+  }
+
+  getCompletedToDos() {
+    return this.completedItems;
+  }
+
+  toggleCompleted(item: ToDo, index: number) {
+    if (item.isCompleted === false) {
+      this.completedItems.push(item);
+    } else {
+      const itemIndex = this.completedItems.findIndex(
+        (item) => item.index === index
+      );
+
+      if (itemIndex !== -1) {
+        // Remove the item with the matching index
+        this.completedItems.splice(itemIndex, 1);
+      }
+    }
   }
 
   addToDo(value: string, isEditing = false, isCompleted = false) {
