@@ -49,6 +49,9 @@ export class DataService {
 
   deleteToDo(index: number) {
     this.toDoItems.splice(index, 1);
+    if (this.isEditing) {
+      this.setGlobalEditing(false);
+    }
   }
 
   editToDo(value: string, index: number) {
